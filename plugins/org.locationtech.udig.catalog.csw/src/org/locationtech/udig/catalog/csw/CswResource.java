@@ -27,13 +27,12 @@ import org.locationtech.udig.catalog.IService;
 import org.locationtech.udig.catalog.internal.CatalogImpl;
 import org.locationtech.udig.catalog.internal.ResolveChangeEvent;
 import org.locationtech.udig.catalog.internal.ResolveDelta;
-
+import org.locationtech.udig.catalog.util.WFSSchemaUtil;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.geotools.data.wfs.WFSDataStore;
 import org.geotools.data.wms.WebMapServer;
 import org.geotools.data.wms.xml.WMSSchema;
-import org.geotools.data.wfs.v1_0_0.xml.WFSSchema;
 
 import com.vividsolutions.jts.geom.Envelope;
 
@@ -239,12 +238,11 @@ static class CswWFSResource extends CswResource{
         url = layer.getOnlineresource();
     }
     private URL url = null;
-
     /*
      * @see org.locationtech.udig.catalog.Csw.CswResource#getSchema()
      */
     protected URI getSchema() {
-        return WFSSchema.NAMESPACE;
+        return WFSSchemaUtil.getWFSSchemaNamespaceCreateIfNull();
     }
 
     /*

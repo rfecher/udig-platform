@@ -99,9 +99,8 @@ public class ActiveMemoryDataStore extends MemoryDataStore {
        }
     }
     
-    public void removeSchema( String typeName ) {
-        schema.remove(typeName);
-        memory.remove(typeName);
+    public void removeSchema( String typeName ) throws IOException {
+        super.removeSchema(typeName);
         for(MemoryServiceListener listener : this.list) {
             listener.schemaChanged();
         }

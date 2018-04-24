@@ -18,8 +18,7 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.geotools.geometry.jts.ReferencedEnvelope;
 import org.geotools.referencing.crs.DefaultGeographicCRS;
 
-import au.com.bytecode.opencsv.CSVReader;
-
+import com.opencsv.CSVReader;
 import com.vividsolutions.jts.geom.Point;
 
 public class CSVGeoResourceInfo extends IGeoResourceInfo {

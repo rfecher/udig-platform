@@ -11,9 +11,9 @@ package org.locationtech.udig.catalog.internal.wmt.wmtsource.ww;
 
 import java.text.MessageFormat;
 
+import org.jdom2.Element;
 import org.locationtech.udig.catalog.internal.wmt.tile.WWTile.WWTileName;
 
-import org.jdom.Element;
 
 /**
  * Represents &lt;ImageTileService&gt; inside a &lt;ImageAccessor&gt;

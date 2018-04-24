@@ -15,11 +15,11 @@ import java.net.URISyntaxException;
 import java.util.Set;
 
 import org.locationtech.udig.catalog.IServiceInfo;
+import org.locationtech.udig.catalog.util.WFSSchemaUtil;
 import org.locationtech.udig.catalog.wfs.internal.Messages;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.geotools.data.wfs.WFSDataStore;
-import org.geotools.data.wfs.v1_0_0.xml.WFSSchema;
 
 /**
  * Description of WFSService.
@@ -29,7 +29,7 @@ import org.geotools.data.wfs.v1_0_0.xml.WFSSchema;
 class WFSServiceInfo extends IServiceInfo {
     private final WFSServiceImpl wfsService;
     private WFSDataStore ds;
-
+    
     WFSServiceInfo( WFSServiceImpl wfsServiceImpl, WFSDataStore resource ) {
         wfsService = wfsServiceImpl;
         this.ds = resource;
@@ -43,7 +43,7 @@ class WFSServiceInfo extends IServiceInfo {
      * @return Service version
      */
     public String getVersion(){
-        return ds.getServiceVersion();
+        return ds.getInfo().getVersion();
     }
     
     public String getAbstract() {
@@ -55,7 +55,7 @@ class WFSServiceInfo extends IServiceInfo {
     }
 
     public URI getSchema() {
-        return WFSSchema.NAMESPACE;
+        return WFSSchemaUtil.getWFSSchemaNamespaceCreateIfNull();
     }
 
     public String getDescription() {

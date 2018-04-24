@@ -11,9 +11,10 @@
 package org.locationtech.udig.tests.catalog.wmt;
 
 import static org.junit.Assert.assertEquals;
+
+import org.jdom2.Element;
 import org.locationtech.udig.catalog.internal.wmt.wmtsource.ww.LayerSet;
 
-import org.jdom.Element;
 import org.junit.Test;
 
 public class LayerSetTest {

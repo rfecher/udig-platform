@@ -31,8 +31,7 @@ import org.geotools.geometry.jts.ReferencedEnvelope;
 import org.junit.Test;
 import org.osgi.framework.Bundle;
 
-import au.com.bytecode.opencsv.CSVReader;
-
+import com.opencsv.CSVReader;
 import com.vividsolutions.jts.geom.Point;
 
 @SuppressWarnings("nls")

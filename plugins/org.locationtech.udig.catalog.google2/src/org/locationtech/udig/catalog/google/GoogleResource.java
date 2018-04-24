@@ -27,11 +27,10 @@ import org.locationtech.udig.catalog.IService;
 import org.locationtech.udig.catalog.internal.CatalogImpl;
 import org.locationtech.udig.catalog.internal.ResolveChangeEvent;
 import org.locationtech.udig.catalog.internal.ResolveDelta;
-
+import org.locationtech.udig.catalog.util.WFSSchemaUtil;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.geotools.data.wfs.WFSDataStore;
-import org.geotools.data.wfs.v1_0_0.xml.WFSSchema;
 import org.geotools.data.wms.WebMapServer;
 import org.geotools.data.wms.xml.WMSSchema;
 
@@ -245,7 +244,7 @@ static class GoogleWFSResource extends GoogleResource{
      * @see org.locationtech.udig.catalog.google.GoogleResource#getSchema()
      */
     protected URI getSchema() {
-        return WFSSchema.NAMESPACE;
+        return WFSSchemaUtil.getWFSSchemaNamespaceCreateIfNull();
     }
 
     /*

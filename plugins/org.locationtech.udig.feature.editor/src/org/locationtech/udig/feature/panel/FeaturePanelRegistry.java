@@ -33,6 +33,7 @@ import org.locationtech.udig.project.ui.internal.ProjectUIPlugin;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.viewers.BaseLabelProvider;
 import org.eclipse.jface.viewers.ILabelProvider;
@@ -41,11 +42,12 @@ import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.ui.IWorkbenchPart;
-import org.eclipse.ui.internal.views.properties.tabbed.TabbedPropertyViewPlugin;
 import org.eclipse.ui.internal.views.properties.tabbed.TabbedPropertyViewStatusCodes;
 import org.eclipse.ui.views.properties.tabbed.ISectionDescriptorProvider;
 import org.eclipse.ui.views.properties.tabbed.ITypeMapper;
 import org.opengis.feature.type.FeatureType;
+import org.osgi.framework.Bundle;
+import org.osgi.framework.FrameworkUtil;
 
 /**
  * Provides information about the feature panel extension points. Each feature panel registry is
@@ -349,6 +351,7 @@ public class FeaturePanelRegistry {
                 .format(TAB_ERROR, new Object[]{pluginId, category});
         IStatus status = new Status(IStatus.ERROR, pluginId,
                 TabbedPropertyViewStatusCodes.TAB_ERROR, message, null);
-        TabbedPropertyViewPlugin.getPlugin().getLog().log(status);
+        Bundle bundle = FrameworkUtil.getBundle(TabbedPropertyViewStatusCodes.class);
+        Platform.getLog(bundle).log(status);
     }
 }

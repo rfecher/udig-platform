@@ -21,7 +21,7 @@
           - verify the classpath (Manfiest Runtime tab) references the libs
           - ensure the lib versions in the classpath are also correct. -->
     
-    <artifactId>pom-libs.download.net.sf.opencsv</artifactId>
+    <artifactId>pom-libs.download.com.opencsv</artifactId>
     <name>OpenCSV Download</name>
     
     <packaging>pom</packaging>
@@ -50,14 +50,22 @@
             </roles>
             <timezone>+1</timezone>
         </developer>
+        <developer>
+            <id>rfecher</id>
+            <name>Rich Fecher</name>
+            <email>rfecher@gmail.com</email>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
     </developers>
 
     <dependencies>
         <!-- OpenCSV Downloads -->
         <dependency>
-            <groupId>net.sf.opencsv</groupId>
+            <groupId>com.opencsv</groupId>
             <artifactId>opencsv</artifactId>
-            <version>2.3</version>
+            <version>3.7</version>
         </dependency>
     </dependencies>
 
