@@ -54,7 +54,7 @@
             </activation>
             <modules>
                 <!-- TUTORIALS -->
-                <module>net.sf.opencsv/</module>
+                <module>com.opencsv/</module>
                 <module>org.locationtech.udig.tutorials.preferredzoomlevels</module>
                 <module>org.locationtech.udig.tutorials.tool-view</module>
                 <module>org.locationtech.udig.tutorials.catalog.csv</module>

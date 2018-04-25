@@ -245,11 +245,6 @@
                         <environment>
                             <os>macosx</os>
                             <ws>cocoa</ws>
-                            <arch>x86</arch>
-                        </environment>
-                        <environment>
-                            <os>macosx</os>
-                            <ws>cocoa</ws>
                             <arch>x86_64</arch>
                         </environment>
                     </environments>
@@ -360,6 +355,15 @@
                 <artifactId>findbugs-maven-plugin</artifactId>
                 <version>2.1</version>
             </plugin>
+        </plugins>
+    </reporting>
+
+    <modules>
+        <module>extras/org.locationtech.udig.target</module>
+        <module>plugins</module>
+        <module>features</module>
+    </modules>
+</project>
         </plugins>
     </reporting>
 
